@@ -1,5 +1,5 @@
 Flow Chart TD
-    Start([Start]) --> Init[Initialize Score = 0]
+    Start[Start] --> Init[Initialize Score = 0]
 
     Init --> Display[Display Categories and Available Questions]
     Display --> Select[User Selects Category and Value]
