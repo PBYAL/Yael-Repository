@@ -1,4 +1,4 @@
-FlowChartTD.md
+Flow Chart TD
     Start([Start]) --> Init[Initialize Score = 0]
 
     Init --> Display[Display Categories and Available Questions]
