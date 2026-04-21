@@ -1,25 +1,27 @@
 flowchart TD
-    A([Start]) --> B[Initialize Score = 0]
-    B --> C[Display Categories and Questions]
-    C --> D[User Selects Category and Value]
+    Start([Start]) --> Init[Initialize Score = 0]
 
-    D --> E{Question Already Used?}
-    E -- Yes --> C
-    E -- No --> F[Display Question]
+    Init --> Display[Display Categories and Available Questions]
+    Display --> Select[User Selects Category and Value]
 
-    F --> G[Get User Answer]
-    G --> H{Is Answer Correct?}
+    Select --> Used{Question Already Used?}
+    Used -- Yes --> Display
+    Used -- No --> ShowQ[Display Question]
 
-    H -- Yes --> I[Add Points]
-    H -- No --> J[Subtract Points]
+    ShowQ --> Input[Get User Answer]
+    Input --> Check{Is Answer Correct?}
 
-    I --> K[Update Score]
-    J --> K
+    Check -- Yes --> Add[Add Points]
+    Check -- No --> Sub[Subtract Points]
 
-    K --> L[Mark Question as Used]
-    L --> M{All Questions Used?}
+    Add --> Update[Update Score]
+    Sub --> Update
 
-    M -- No --> C
-    M -- Yes --> N[Display Final Score]
+    Update --> Mark[Mark Question as Used]
+    Mark --> Done{All Questions Used?}
 
-    N --> O([End])
+    Done -- No --> Display
+    Done -- Yes --> Final[Display Final Score]
+
+    Final --> End([End])
+    
